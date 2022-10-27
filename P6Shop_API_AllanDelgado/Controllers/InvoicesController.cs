@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using P6Shop_API_AllanDelgado.Attributes;
 using P6Shop_API_AllanDelgado.Models;
 
 namespace P6Shop_API_AllanDelgado.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiKey]
     public class InvoicesController : ControllerBase
     {
         private readonly P6SHOPPINGContext _context;
