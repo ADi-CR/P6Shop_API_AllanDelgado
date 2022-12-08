@@ -115,7 +115,8 @@ namespace P6Shop_API_AllanDelgado.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(user.UserPassword).State = EntityState.Modified;
+
 
             try
             {

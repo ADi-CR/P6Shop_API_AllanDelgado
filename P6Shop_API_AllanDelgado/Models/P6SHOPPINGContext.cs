@@ -9,11 +9,13 @@ namespace P6Shop_API_AllanDelgado.Models
     {
         public P6SHOPPINGContext()
         {
+
         }
 
         public P6SHOPPINGContext(DbContextOptions<P6SHOPPINGContext> options)
             : base(options)
         {
+
         }
 
         public virtual DbSet<Country> Countries { get; set; } = null!;
@@ -34,7 +36,8 @@ namespace P6Shop_API_AllanDelgado.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("SERVER=.;DATABASE=P6SHOPPING;INTEGRATED SECURITY=TRUE; User Id=;Password=");
             }
         }
 
@@ -100,8 +103,6 @@ namespace P6Shop_API_AllanDelgado.Models
                     .HasDefaultValueSql("('1')");
 
                 entity.Property(e => e.Idcurrency).HasColumnName("IDCurrency");
-
-                entity.Property(e => e.IditemPicture).HasColumnName("IDItemPicture");
 
                 entity.Property(e => e.Idstore).HasColumnName("IDStore");
 
